@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/stylesheets/style1.css">
+<title>Payment</title>
+</head>
+<body>
+	</br>
+	<div id="logout">
+		<form id="logout" method="post" action="/logout">
+			<input type="image" src="/img/Logout.jpg" alt="Submit" value="Logout"
+				width="100" height="25"
+				style="position: fixed; top: 20px; left: 1101px;"> <label>{{message}}</label>
+
+		</form>
+
+
+
+		<center>
+			<h2>Payment</h2>
+		</center>
+		</center>
+
+		</br>
+		</br>
+		<div>
+			<form id="paypal"
+				style="position: absolute; top: 102px; left: 1089px;">
+				<a href="https://www.paypal.com/webapps/mpp/payflow-payment-gateway"><img
+					title="Paypal" src="/img/Paypal.jpg" width="113" height="35"
+					border="0" /></a>
+			</form>
+		</div>
+
+		</br>
+		</br>
+		</br>
+		<div align="center" position:absolute;
+top: 166px;
+left: 483px;>
+			<form method="post" action="/SubmitPayment">
+				<table>
+					<tr>
+						<a href="#"><img title="card_logo"
+							src="http://www.free-credit-card-logos.com/mc_ms_vs_accpt_h_023_gif.gif"
+							width="113" height="23" border="0" /></a>
+						</br>
+					</tr>
+					<tr>
+						<td><label>Name Of Card Holder:</label></td>
+						<td><input type="text" name="cardHolderName" /></td>
+					</tr>
+					<tr>
+						<td><label>Card Number :</label></td>
+						<td><input type="text" name="cardNumber"></td>
+					</tr>
+					<tr>
+						<td><label>CVV :</label></td>
+						<td><input type="text" name="cvv"></td>
+					</tr>
+					<tr>
+						<td><label>Expiry Date :</label>
+						<td><SELECT NAME="CCExpiresMonth">
+								<OPTION VALUE="" SELECTED>--Month--
+								<OPTION VALUE="01">January (01)
+								<OPTION VALUE="02">February (02)
+								<OPTION VALUE="03">March (03)
+								<OPTION VALUE="04">April (04)
+								<OPTION VALUE="05">May (05)
+								<OPTION VALUE="06">June (06)
+								<OPTION VALUE="07">July (07)
+								<OPTION VALUE="08">August (08)
+								<OPTION VALUE="09">September (09)
+								<OPTION VALUE="10">October (10)
+								<OPTION VALUE="11">November (11)
+								<OPTION VALUE="12">December (12)
+						</SELECT> / <SELECT NAME="CCExpiresYear">
+								<OPTION VALUE="" SELECTED>--Year--
+								<OPTION VALUE="14">2014
+								<OPTION VALUE="15">2015
+								<OPTION VALUE="16">2016
+								<OPTION VALUE="17">2017
+						</SELECT></td>
+					</tr>
+
+
+
+				</table>
+				<input type="submit" value="Submit">
+
+			</form>
+
+
+
+
+		</div>
+</body>
+</html>

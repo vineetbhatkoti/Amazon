@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript"
+	src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="MusicMoviesAndGames.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/style1.css">
+<title>Movies,Music&Games</title>
+</head>
+<body>
+	<div id="logout">
+		<form id="logout" method="post" action="/logout">
+			<input type="image" src="/img/Logout.jpg" alt="Submit" value="Logout"
+				width="100" height="25"
+				style="position: fixed; top: 20px; left: 1101px;">
+		</form>
+	</div>
+
+	<h1>Music, Movies & Games</h1>
+	<div id="catalog1" align="center">
+		<form id='form2' method="post">
+			</br>
+			</br>
+			<table border="0" width="900px">
+				<tr>
+					<th>ItemId</th>
+					<th></th>
+					<th>Product Type</th>
+					<th>Article Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Quantity-Order</th>
+				</tr>
+
+
+
+				{{#each MoviesMusicGamesHomeResults}}
+				<tr>
+
+					<td>{{mmgid}}</td>
+					<td style="display: none"><input type="hidden" name="mmgid"
+						value="{{mmgid}}" /></td>
+					<td><img src={{url}} width="113" height="70" border="0" /></td>
+					<td>{{Product}}</td>
+					<td style="display: none"><input type="hidden" name="Product"
+						value="{{Product}}" /></td>
+					<td>{{ArticalName}}</td>
+					<td style="display: none"><input type="hidden"
+						name="ArticleName" value="{{ArticalName}}" /></td>
+					<td>{{price}}</td>
+					<td style="display: none"><input type="hidden" name="price"
+						value="{{price}}" /></td>
+					<td>{{quantity}}</td>
+					<td style="display: none"><input type="hidden" name="quantity"
+						value="{{quantity}}" /></td>
+					<td><input type="text" name="quantityOrder"></td>
+
+					<td><input type='checkbox' name="{{mmgid}}" value="checked">
+					</td>
+
+
+
+				</tr>
+				{{/each}}
+
+			</table>
+			<input type="submit" id="tableSubmit" value="Add to Cart"
+				onclick="submit" />
+		</form>
+		<form action="/CartDisplay" method="post">
+			</br>
+			</br> <input type="submit" id="checkout" value="Proceed to CheckOut"
+				onclick="submit()">
+
+
+		</form>
+
+	</div>
+</body>
+</html>

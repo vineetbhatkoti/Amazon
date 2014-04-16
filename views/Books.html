@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="Book.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/style1.css">
+<title>{{title}}</title>
+</head>
+<body>
+	<div id="logout">
+		<input type="image" src="/img/Logout.jpg" alt="Submit" value="Logout"
+			width="100" height="25"
+			style="position: fixed; top: 20px; left: 1101px;">
+		</form>
+	</div>
+
+	<h1>Books</h1>
+	</br>
+	</br>
+
+	<div id="catalog1" align="center">
+		<form id='form2' method="post">
+
+			<table border="0" width="900px">
+				<tr>
+					<th>BookId</th>
+					<th></th>
+					<th>Type</th>
+					<th>BookName</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Quantity-Order</th>
+				</tr>
+
+
+				{{#each BooksResults}}
+				<tr>
+
+					<td>{{bookid}}</td>
+					<td style="display: none"><input type="hidden" name="bookid"
+						value="{{bookid}}" /></td>
+					<td><img src={{url}} width="113" height="70" border="0" /></td>
+					<td>{{Product}}</td>
+					<td style="display: none"><input type="hidden" name="Product"
+						value="{{Product}}" /></td>
+					<td>{{bookName}}</td>
+					<td style="display: none"><input type="hidden" name="bookName"
+						value="{{bookName}}" /></td>
+					<td>{{price}}</td>
+					<td style="display: none"><input type="hidden" name="price"
+						value="{{price}}" /></td>
+					<td>{{quantity}}</td>
+					<td style="display: none"><input type="hidden" name="quantity"
+						value="{{quantity}}" /></td>
+					<td><input type="text" name="quantityOrder"></td>
+
+					<td><input type='checkbox' name="{{bookid}}" value="checked">
+					</td>
+
+
+
+				</tr>
+				{{/each}}
+
+			</table>
+			<input type="submit" id="tableSubmit" value="Add to Cart"
+				onclick="submit" />
+		</form>
+		<form action="/CartDisplay" method="post">
+			</br>
+			</br> <input type="submit" id="checkout" value="Proceed to CheckOut"
+				onclick="submit()">
+
+
+		</form>
+
+	</div>
+</body>
+</html>

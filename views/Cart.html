@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript"	src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="ElectronicCart.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/style1.css">
+
+<title>Cart !!</title>
+</head>
+<body>
+	The Cart Details are as follows :
+
+
+	<div id="logout">
+		<form id="logout" method="post" action="/logout">
+			<input type="image" src="/img/Logout.jpg" alt="Submit" value="Logout"
+				width="100" height="25"
+				style="position: fixed; top: 20px; left: 1101px;">
+		</form>
+
+
+
+		<h1>Cart</h1>
+		<form id='form2' method="post" action="/PaymentGate">
+			</br>
+			</br>
+
+
+			<table border="1" width="900px" align="center">
+
+				<tr>
+					<th>Cart-Id</th>
+					<th>Type</th>
+					<th>Description</th>
+					<th>TotalPrice</th>
+					<th>Quantity-Ordered</th>
+					<th>Category</th>
+				</tr>
+
+
+
+				{{#each CartResults}}
+				<tr id="{{cartid}}">
+					<td>{{cartid}}</td>
+					<td>{{Product}}</td>
+					<td>{{description}}</td>
+					<td>{{totalPrice}}</td>
+					<td>{{quantityOrder}}</td>
+					<td>{{catalog}}</td>
+					<td><input type="button" id="{{cartid}}" class="button"
+						value="Remove" /></td>
+
+
+				</tr>
+				{{/each}}
+			</table>
+
+			</br>
+			</br>
+			<center>
+				<input type="submit" value="Pay & Confirm">
+			</center>
+		</form>
+</body>
+</html>
